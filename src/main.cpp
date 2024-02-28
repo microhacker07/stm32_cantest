@@ -1,4 +1,5 @@
 #include <Arduino.h>
+#include "ACANFD_STM32.h"
 
 #if defined (USBCON) && defined(USBD_USE_CDC)
 #include "USBSerial.h"
