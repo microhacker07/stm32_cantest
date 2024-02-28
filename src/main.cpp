@@ -25,13 +25,16 @@
 USBSerial usb_serial;
 #endif
 
+#define LED_BUILTIN PA5
+
 //-----------------------------------------------------------------
 
 void setup () {
 	#if defined (USBCON) && defined(USBD_USE_CDC)
 	usb_serial.begin(9600);
 	#endif
-  pinMode (LED_BUILTIN, OUTPUT) ;
+  pinMode (LED_BUILTIN, OUTPUT);
+  
   while (!Serial) {
     digitalWrite (LED_BUILTIN, !digitalRead (LED_BUILTIN)) ;
     delay (50) ;
